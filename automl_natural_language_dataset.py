@@ -24,10 +24,11 @@ import argparse
 import os
 
 
-def create_dataset(project_id, compute_region, dataset_name, multilabel=True):
+def create_dataset(project_id, compute_region, dataset_name):
     """Create a dataset."""
     # [START automl_language_create_dataset]
     # TODO(developer): Uncomment and set the following variables
+    multilabel = True;
      
 
     from google.cloud import automl_v1beta1 as automl
@@ -227,7 +228,7 @@ def delete_dataset(project_id, compute_region, dataset_id):
 
 if __name__ == "__main__":
     
-    create_dataset('cdmx-safe-map','us-east4','Crimecategory',True)
+    create_dataset('cdmx-safe-map','us-east4','Crimecategory')
     print("dataset created")
     
     import_data('cdmx-safe-map','us-east4','Crimecategory','Delitos.csv')
