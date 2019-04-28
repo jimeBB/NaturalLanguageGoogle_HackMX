@@ -228,9 +228,9 @@ def delete_dataset(project_id, compute_region, dataset_id):
 
 if __name__ == "__main__":
     
-    create_dataset('cdmx-safe-map','us-east4','Crimecategory')
+    create_dataset('cdmx-safe-map','us-east4','Crimecategory2')
     print("dataset created")
     
-    import_data('cdmx-safe-map','us-east4','Crimecategory','Delitos.csv')
+    import_data('cdmx-safe-map','us-east4','Crimecategory2','Delitos.csv')
     
    
