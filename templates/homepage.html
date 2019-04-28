@@ -4,9 +4,21 @@
 	<title>Comments: Danger Zone</title>
   <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/jquery-3.3.1.min.js"> </script>
 </head>
 
 <body>
+ <section id="slide1">
+            
+  
+        
+<button class="button" id="btn_start">Start</button>
+            
+  </section>
+
+
+<section id="slide2">
   <h1> Declare the crime that you witnessed or lived:</h1>
   <h2> Please indicate the location as detailed as possible </h2>
   <div id="formBox">
@@ -31,5 +43,18 @@
           <br>
         {% endif %}
 </div>
+</section>
+
+<script type="text/javascript">
+ $('#slide2').hide();
+  $('#btn_start').on('click',function(){
+      
+      $('#slide1').hide();
+      $('#slide2').show();
+      
+      
+    }); 
+
+</script>
 </body>
   </html>

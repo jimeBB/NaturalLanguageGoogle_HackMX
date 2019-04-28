@@ -1,12 +1,16 @@
 
-body {
-		background: url('../img/fondoGeneral.png') no-repeat;
+ #slide1{
+		background: url('../img/inicio.png') no-repeat;
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
     font-weight: 300;
     position: relative;
     background-size: 100%;
     font-family: 'IBM Plex Sans', sans-serif;
+}
+#slide2{
+	background: url('../img/fondoGeneral.png') ;
+	background-size: 100%;
 }
 #wrap{
 	position: absolute;
@@ -17,14 +21,14 @@ body {
  h1{
  position: absolute;
  right: 240px;
- top:25px;
+ top:40px;
  font-size: 30px;
  }
 
 h2{
 position: absolute;
  right: 350px;
- top:60px;
+ top:80px;
  font-size: 20px;
 
  }
@@ -54,3 +58,29 @@ position: absolute;
  font-size: 20px;
 
  }
+
+ #btn_start {
+ 	position: absolute;
+ 	right: 380px;
+ 	bottom: 100px;
+  background-color: #ffcc00; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+}
+#btn_start {border-radius: 10px;}
+section{
+    width: 100vw;
+    height: 100vh;
+	
+font-family: 'Open Sans Condensed', sans-serif;
+
+}
