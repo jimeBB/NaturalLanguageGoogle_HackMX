@@ -31,16 +31,13 @@
 <div id="results">
     {% if sentiment %}
 
-          <h3>Entity Detection:</h3>
+          <h3>Clasification</h3>
           {% for entity in entities %}
             <p><b>Name:</b> {{ entity.name }}</p>
-            <p><b>Salience:</b> {{ entity.salience }}</p>
+            <p><b>Confidence:</b> {{ entity.salience }}</p>
             <br>
           {% endfor %}
-          <h4>Sentiment Analysis:</h4>
-            <p><b>Magnitude:</b> {{ sentiment.magnitude }}</p>
-            <p><b>Score:</b> {{ sentiment.score }}</p>
-          <br>
+          
         {% endif %}
 </div>
 </section>
