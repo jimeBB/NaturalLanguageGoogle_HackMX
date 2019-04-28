@@ -44,6 +44,7 @@
           {%if label.classification.score > 0.6:%}
             <p><b>Name:</b> {{ label.display_name }}</p>
             <br>
+            {% endif %}
           {% endfor %}
 
         {% endif %}
