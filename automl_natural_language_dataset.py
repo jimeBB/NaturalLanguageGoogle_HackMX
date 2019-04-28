@@ -226,68 +226,10 @@ def delete_dataset(project_id, compute_region, dataset_id):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-    )
-    subparsers = parser.add_subparsers(dest="command")
-
-    create_dataset_parser = subparsers.add_parser(
-        "create_dataset", help=create_dataset.__doc__
-    )
-    create_dataset_parser.add_argument("dataset_name")
-    create_dataset_parser.add_argument(
-        "multilabel", nargs="?", choices=["False", "True"], default="False"
-    )
-
-    list_datasets_parser = subparsers.add_parser(
-        "list_datasets", help=list_datasets.__doc__
-    )
-    list_datasets_parser.add_argument(
-        "filter_", nargs="?", default="text_classification_dataset_metadata:*"
-    )
-
-    get_dataset_parser = subparsers.add_parser(
-        "get_dataset", help=get_dataset.__doc__
-    )
-    get_dataset_parser.add_argument("dataset_id")
-
-    import_data_parser = subparsers.add_parser(
-        "import_data", help=import_data.__doc__
-    )
-    import_data_parser.add_argument("dataset_id")
-    import_data_parser.add_argument("path")
-
-    export_data_parser = subparsers.add_parser(
-        "export_data", help=export_data.__doc__
-    )
-    export_data_parser.add_argument("dataset_id")
-    export_data_parser.add_argument("output_uri")
-
-    delete_dataset_parser = subparsers.add_parser(
-        "delete_dataset", help=delete_dataset.__doc__
-    )
-    delete_dataset_parser.add_argument("dataset_id")
-
-    project_id = os.environ["PROJECT_ID"]
-    compute_region = os.environ["REGION_NAME"]
-
-    args = parser.parse_args()
-
-    if args.command == "create_dataset":
-        multilabel = True if args.multilabel == "True" else False
-        create_dataset(
-            project_id, compute_region, args.dataset_name, multilabel
-        )
-    if args.command == "list_datasets":
-        list_datasets(project_id, compute_region, args.filter_)
-    if args.command == "get_dataset":
-        get_dataset(project_id, compute_region, args.dataset_id)
-    if args.command == "import_data":
-        import_data(project_id, compute_region, args.dataset_id, args.path)
-    if args.command == "export_data":
-        export_data(
-            project_id, compute_region, args.dataset_id, args.output_uri
-        )
-    if args.command == "delete_dataset":
-        delete_dataset(project_id, compute_region, args.dataset_id)
+    
+    create_dataset('cdmx-safe-map','us-east4','Crimecategory',True)
+    print("dataset created")
+    
+    import_data('cdmx-safe-map','us-east4','Crimecategory','delitos.csv')
+    
+   
