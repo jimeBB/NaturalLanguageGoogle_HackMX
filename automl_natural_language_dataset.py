@@ -230,6 +230,6 @@ if __name__ == "__main__":
     create_dataset('cdmx-safe-map','us-east4','Crimecategory',True)
     print("dataset created")
     
-    import_data('cdmx-safe-map','us-east4','Crimecategory','delitos.csv')
+    import_data('cdmx-safe-map','us-east4','Crimecategory','Delitos.csv')
     
    
