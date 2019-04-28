@@ -8,19 +8,27 @@
 <script src="js/jquery-3.3.1.min.js"> </script>
 </head>
 
+<style>
+      /* Set the size of the div element that contains the map */
+     #map {
+       height: 400px;  /* The height is 400 pixels */
+       width: 100%;  /* The width is the width of the web page */
+      }
+   </style>
+
 <body>
  <section id="slide1">
-            
-  
-        
+
+
+
 <button class="button" id="btn_start">Start</button>
-            
+
   </section>
 
 
 <section id="slide2">
   <h1> Declare the crime that you witnessed or lived:</h1>
-  <h2> Please indicate the location as detailed as possible </h2>
+  <h2> (Please indicate the location and be as detailed as possible) </h2>
   <div id="formBox">
   <form method = "post" name ="comentario" enctype="multipart/form-data" >
         Declaración: <textarea rows="4" cols="50" name="comment" form="comentario">Enter text here...</textarea>
@@ -29,28 +37,51 @@
     </form>
     </div>
 <div id="results">
-    {% if sentiment %}
+    {% if clsasification %}
 
           <h3>Clasification</h3>
           {% for entity in entities %}
             <p><b>Name:</b> {{ entity.name }}</p>
-            <p><b>Confidence:</b> {{ entity.salience }}</p>
+            <p><b>Confidence:</b> {{ entity.confidence }}</p>
             <br>
           {% endfor %}
-          
+
         {% endif %}
 </div>
 </section>
 
+<div id="map"></div>
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 19.4978, lng: -99.1269};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 11, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKEw_5T596CmH0rnPMXB0qOXW5gxXqiew&callback=initMap">
+</script>
+
+<!--<script>
+  function initMap() {
+  }
+</script>-->
+
 <script type="text/javascript">
  $('#slide2').hide();
   $('#btn_start').on('click',function(){
-      
+
       $('#slide1').hide();
       $('#slide2').show();
-      
-      
-    }); 
+
+
+    });
 
 </script>
 </body>
