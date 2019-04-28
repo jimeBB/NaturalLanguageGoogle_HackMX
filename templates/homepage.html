@@ -2,30 +2,34 @@
 <head>
   <meta charset="utf-8">
 	<title>Comments: Danger Zone</title>
+  <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
 </head>
 
 <body>
   <h1> Declare the crime that you witnessed or lived:</h1>
   <h2> Please indicate the location as detailed as possible </h2>
-  <form method = "post" name ="comentario" enctype="multipart/form-data">
+  <div id="formBox">
+  <form method = "post" name ="comentario" enctype="multipart/form-data" >
         Declaración: <textarea rows="4" cols="50" name="comment" form="comentario">Enter text here...</textarea>
         <input type="submit" name = "but_submit" value="Submit">
 
     </form>
-
+    </div>
+<div id="results">
     {% if sentiment %}
 
-          <h2>Entity Detection:</h2>
+          <h3>Entity Detection:</h3>
           {% for entity in entities %}
             <p><b>Name:</b> {{ entity.name }}</p>
             <p><b>Salience:</b> {{ entity.salience }}</p>
             <br>
           {% endfor %}
-          <h2>Sentiment Analysis:</h2>
+          <h4>Sentiment Analysis:</h4>
             <p><b>Magnitude:</b> {{ sentiment.magnitude }}</p>
             <p><b>Score:</b> {{ sentiment.score }}</p>
           <br>
         {% endif %}
-
+</div>
 </body>
   </html>

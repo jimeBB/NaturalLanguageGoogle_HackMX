@@ -1,0 +1,56 @@
+
+body {
+		background: url('../img/fondoGeneral.png') no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    position: relative;
+    background-size: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+#wrap{
+	position: absolute;
+	top:25px;
+	right: 240px;
+}
+
+ h1{
+ position: absolute;
+ right: 240px;
+ top:25px;
+ font-size: 30px;
+ }
+
+h2{
+position: absolute;
+ right: 350px;
+ top:60px;
+ font-size: 20px;
+
+ }
+ #formBox{
+ 	position: absolute;
+ 	right: 365px;
+ 	top:130px;
+
+ }
+  #results{
+ 	position: absolute;
+ 	right: 365px;
+ 	top:250px;
+
+ }
+ h3{
+position: absolute;
+ right: 350px;
+ top:-20px;
+ font-size: 20px;
+
+ }
+ h4{
+position: absolute;
+ right: 350px;
+ top:100px;
+ font-size: 20px;
+
+ }
