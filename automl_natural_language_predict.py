@@ -58,8 +58,9 @@ def predict(project_id, compute_region, model_id, file_path):
     response = prediction_client.predict(model_full_id, payload, params)
     print("Prediction results:")
     for result in response.payload:
-        print("Predicted class name: {}".format(result.display_name))
-        print("Predicted class score: {}".format(result.classification.score))
+        if(result.classification.score >6.0)
+                print("Predicted class name: {}".format(result.display_name))
+                print("Predicted class score: {}".format(result.classification.score))
 
     # [END automl_language_predict]
 
