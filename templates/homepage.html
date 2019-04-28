@@ -37,12 +37,12 @@
     </form>
     </div>
 <div id="results">
-    {% if clsasification %}
+    {% if labels %}
 
           <h3>Clasification</h3>
-          {% for entity in entities %}
-            <p><b>Name:</b> {{ entity.name }}</p>
-            <p><b>Confidence:</b> {{ entity.confidence }}</p>
+          {% for label in labels %}
+          {%if label.classification.score > 0.6:%}
+            <p><b>Name:</b> {{ label.display_name }}</p>
             <br>
           {% endfor %}
 
